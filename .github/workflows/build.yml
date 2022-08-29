@@ -44,12 +44,6 @@ jobs:
       - name: Generate the Android App Bundle
         working-directory: ./android/
         run: ./gradlew bundleRelease
-        
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.0        
-        with:
-          name: app-dev
-          path: platforms/android/app/build/outputs/apk/debug/app-debug.apk
           
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.0        
@@ -63,8 +57,3 @@ jobs:
           name: app-release
           path: /home/runner/work/my-wallet/my-wallet/android/app/build/outputs/bundle/release/app-release.aab
           
-      - name: Upload dev APK
-        uses: actions/upload-artifact@v1
-        with:
-          name: app-dev
-          path: apk/app-debug.apk
