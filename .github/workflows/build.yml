@@ -39,16 +39,28 @@ jobs:
                
       - name: Generate the Android App Bundle
         working-directory: ./android/
-        run: ./gradlew bundle
+        run: ./gradlew bundleRelease
         
       - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v3.1.0        
         with:
           name: app-dev
-          path: my-wallet\android\app\build\outputs\apk\debug\app-debug.apk
+          path: platforms/android/app/build/outputs/apk/debug/app-debug.apk
+          
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.0        
+        with:
+          name: app-dev
+          path: my-wallet/android/app/build/outputs/apk/debug/app-debug.apk
           
       - name: Upload release bundleRelease
         uses: actions/upload-artifact@v3.1.0
         with:
           name: app-release
-          path: my-wallet\android\app\build\outputs\bundle\release\app-release.aab
+          path: platforms/android/app/build/outputs/bundle/release/app-debug.apk
+          
+      - name: Upload dev APK
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-dev
+          path: apk/app-debug.apk
