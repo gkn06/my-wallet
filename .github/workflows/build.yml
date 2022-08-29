@@ -36,6 +36,10 @@ jobs:
       - name: Grant execute permission for publishing script
         working-directory: ./android/
         run: chmod +x ./gradlew
+        
+      - name: Generate the Android App Debug Apk
+        working-directory: ./android/
+        run: ./gradlew assembleDebug
                
       - name: Generate the Android App Bundle
         working-directory: ./android/
@@ -51,13 +55,13 @@ jobs:
         uses: actions/upload-artifact@v3.1.0        
         with:
           name: app-dev
-          path: my-wallet/android/app/build/outputs/apk/debug/app-debug.apk
+          path: /home/runner/work/my-wallet/my-wallet/android/app/build/outputs/apk/debug/app-debug.apk
           
       - name: Upload release bundleRelease
         uses: actions/upload-artifact@v3.1.0
         with:
           name: app-release
-          path: platforms/android/app/build/outputs/bundle/release/app-debug.apk
+          path: /home/runner/work/my-wallet/my-wallet/android/app/build/outputs/bundle/release/app-release.aab
           
       - name: Upload dev APK
         uses: actions/upload-artifact@v1
