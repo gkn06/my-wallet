@@ -38,6 +38,7 @@ jobs:
         run: chmod +x ./gradlew
         
       - name: Make Directory
+        working-directory: ./
         run: mkdir apk
         
       - name: Generate the Android App Bundle
