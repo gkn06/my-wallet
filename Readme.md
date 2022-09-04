@@ -47,10 +47,4 @@ The project is started with the regular ionic commands.
 An alternative is to emulate the app on a device or upload it to the ionic cloud. From here you can download the ionic view app and use the app on all devices.
 
 
-  - uses: actions/setup-java@v2
-    with:
-      distribution: temurin
-      java-version: 17
-      cache: gradle
-          
-          
+[![CI](https://github.com/gkn06/my-wallet/actions/workflows/build.yml/badge.svg)](https://github.com/gkn06/my-wallet/actions/workflows/build.yml)
